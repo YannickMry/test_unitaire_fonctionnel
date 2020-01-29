@@ -26,6 +26,12 @@ class Adherent {
         return $this->prenom;
     }
 
+
+    public function getInfo()
+    {
+        return $this->getPrenom(). " ". $this->getnom() . " " . $this->date_naissance->format("d/m/Y");
+    }
+
     private function removeAccent(string $str){
         $utf8 = array(
             '/[áàâä]/u' => 'a',
