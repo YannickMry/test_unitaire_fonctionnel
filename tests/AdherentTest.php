@@ -14,4 +14,19 @@ final class AdherentTest extends TestCase
         );
     }
 
+    public function testCapitalize(): void {
+
+        $adherent = new Adherent('nom','prénom', new \DateTime());
+
+        $this->assertEquals(
+            'Nom',
+            $adherent->getNom()
+        );
+
+        $this->assertEquals(
+            'Prénom',
+            $adherent->getPrenom()
+        );
+    }
+
 }
