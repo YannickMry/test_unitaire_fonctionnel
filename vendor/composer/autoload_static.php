@@ -65,6 +65,7 @@ class ComposerStaticInit7506a4b1376d652ba892a3677e84f4fd
     );
 
     public static $classMap = array (
+        'Adherent' => __DIR__ . '/../..' . '/src/Adherent.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',
