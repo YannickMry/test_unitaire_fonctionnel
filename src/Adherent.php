@@ -9,10 +9,20 @@ class Adherent {
 
     public function __construct(string $nom, string $prenom, \DateTime $date_naissance)
     {
-        
-        $this->nom = $nom;
-        $this->prenom = $prenom;
+
+        $this->nom = ucfirst($nom);
+        $this->prenom = ucfirst($prenom);
         $this->date_naissance = $date_naissance;
 
+    }
+
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function getPrenom()
+    {
+        return $this->prenom;
     }
 }
