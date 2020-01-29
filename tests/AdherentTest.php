@@ -44,4 +44,15 @@ final class AdherentTest extends TestCase
         );
     }
 
+    public function testConcatenate(): void {
+
+        $adherent = new Adherent('Lainé','Cécile', new \DateTime('1970-03-27'));
+
+        $this->assertEquals(
+            'Cecile Laine 27/03/1970',
+            $adherent->getInfo()
+        );
+        
+    }
+
 }
