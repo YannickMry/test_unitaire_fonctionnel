@@ -24,7 +24,7 @@ final class AdherentTest extends TestCase
         );
 
         $this->assertEquals(
-            'Prénom',
+            'Prenom',
             $adherent->getPrenom()
         );
     }

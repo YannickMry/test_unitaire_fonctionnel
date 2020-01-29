@@ -10,8 +10,8 @@ class Adherent {
     public function __construct(string $nom, string $prenom, \DateTime $date_naissance)
     {
 
-        $this->nom = ucfirst($nom);
-        $this->prenom = ucfirst($prenom);
+        $this->nom = $this->removeAccent(ucfirst($nom));
+        $this->prenom = $this->removeAccent(ucfirst($prenom));
         $this->date_naissance = $date_naissance;
 
     }
@@ -24,5 +24,21 @@ class Adherent {
     public function getPrenom()
     {
         return $this->prenom;
+    }
+
+    private function removeAccent(string $str){
+        $utf8 = array(
+            '/[áàâä]/u' => 'a',
+            '/[ÁÀÂÄ]/u' => 'A',
+            '/[ÍÌÎÏ]/u' => 'I',
+            '/[íìîï]/u' => 'i',
+            '/[éèêë]/u' => 'e',
+            '/[ÉÈÊË]/u' => 'E',
+            '/[óòö]/u' => 'o',
+            '/[ÓÒÔÖ]/u' => 'O',
+            '/[úùûü]/u' => 'u',
+            '/[ÚÙÛÜ]/u' => 'U',
+            );
+            return preg_replace(array_keys($utf8), array_values($utf8), $str);
     }
 }
