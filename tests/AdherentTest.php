@@ -29,4 +29,19 @@ final class AdherentTest extends TestCase
         );
     }
 
+    public function testAccents(): void {
+
+        $adherent = new Adherent('Lainé','Cécile', new \DateTime());
+
+        $this->assertEquals(
+            'Laine',
+            $adherent->getNom()
+        );
+
+        $this->assertEquals(
+            'Cecile',
+            $adherent->getPrenom()
+        );
+    }
+
 }
